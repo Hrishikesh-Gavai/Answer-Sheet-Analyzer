@@ -1,0 +1,796 @@
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /analysis
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /analysis
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\utils\deprecation.py", line 131, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/analysis/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 16, in result_view
+    with open(student_pdf_path, 'wb+') as destination:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'temp\\QNA2 (2).pdf'
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+ERROR:root:Error extracting keywords: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 33, in result_view
+    results = process_answers(student_file_path, model_answers_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 128, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 46, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 317, in generate_content
+    self._client = client.get_default_generative_client()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 351, in get_default_generative_client
+    return _client_manager.get_default_client("generative")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 280, in get_default_client
+    client = self.make_client(name)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 240, in make_client
+    raise e
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 232, in make_client
+    client = cls(**self.client_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 687, in __init__
+    self._transport = transport_init(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\grpc.py", line 154, in __init__
+    super().__init__(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\base.py", line 100, in __init__
+    credentials, _ = google.auth.default(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\auth\_default.py", line 691, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+ERROR:root:Error extracting keywords: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 33, in result_view
+    results = process_answers(student_file_path, model_answers_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 128, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 46, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 317, in generate_content
+    self._client = client.get_default_generative_client()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 351, in get_default_generative_client
+    return _client_manager.get_default_client("generative")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 280, in get_default_client
+    client = self.make_client(name)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 240, in make_client
+    raise e
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 232, in make_client
+    client = cls(**self.client_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 687, in __init__
+    self._transport = transport_init(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\grpc.py", line 154, in __init__
+    super().__init__(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\base.py", line 100, in __init__
+    credentials, _ = google.auth.default(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\auth\_default.py", line 691, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+ERROR:root:Error extracting keywords: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 33, in result_view
+    results = process_answers(student_file_path, model_answers_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 129, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 47, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 317, in generate_content
+    self._client = client.get_default_generative_client()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 351, in get_default_generative_client
+    return _client_manager.get_default_client("generative")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 280, in get_default_client
+    client = self.make_client(name)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 240, in make_client
+    raise e
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 232, in make_client
+    client = cls(**self.client_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 687, in __init__
+    self._transport = transport_init(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\grpc.py", line 154, in __init__
+    super().__init__(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\base.py", line 100, in __init__
+    credentials, _ = google.auth.default(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\auth\_default.py", line 691, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+WARNING:django.request:Not Found: /
+ERROR:root:Error extracting keywords: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 33, in result_view
+    results = process_answers(student_file_path, model_answers_file_path)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 129, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 47, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 317, in generate_content
+    self._client = client.get_default_generative_client()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 351, in get_default_generative_client
+    return _client_manager.get_default_client("generative")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 280, in get_default_client
+    client = self.make_client(name)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 240, in make_client
+    raise e
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\client.py", line 232, in make_client
+    client = cls(**self.client_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 687, in __init__
+    self._transport = transport_init(
+                      ^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\grpc.py", line 154, in __init__
+    super().__init__(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\transports\base.py", line 100, in __init__
+    credentials, _ = google.auth.default(
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\auth\_default.py", line 691, in default
+    raise exceptions.DefaultCredentialsError(_CLOUD_SDK_MISSING_CREDENTIALS)
+google.auth.exceptions.DefaultCredentialsError: 
+  No API_KEY or ADC found. Please either:
+    - Set the `GOOGLE_API_KEY` environment variable.
+    - Manually pass the key with `genai.configure(api_key=my_api_key)`.
+    - Or set up Application Default Credentials, see https://ai.google.dev/gemini-api/docs/oauth for more information.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/about.html
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/features.html
+WARNING:django.request:Not Found: /about/index.html
+WARNING:django.request:Not Found: /about/index.html
+WARNING:django.request:Not Found: /about/index.html
+WARNING:django.request:Not Found: /about/index.html
+WARNING:django.request:Not Found: /about/style.css
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /analysis/
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+ERROR:root:Error extracting keywords: 429 Resource has been exhausted (e.g. check quota).
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py", line 32, in result_view
+    results, total_marks = process_answers(student_file_path, model_answers_file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 139, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py", line 49, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 830, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource has been exhausted (e.g. check quota).
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /home/
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\views.py changed, reloading.
+WARNING:django.request:Not Found: /features/
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /features/style.css
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/path-to-your-image.jpg
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /analysis/logo.png
+WARNING:django.request:Not Found: /analysis/logo.png
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /analysis/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /analysis/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /analysis/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /home/logo.png
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/logo.png
+WARNING:django.request:Not Found: /features/img1_.png
+WARNING:django.request:Not Found: /features/logo.png
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/img2_.png
+WARNING:django.request:Not Found: /features/img3.webp
+WARNING:django.request:Not Found: /features/img6.png
+WARNING:django.request:Not Found: /features/img4.webp
+WARNING:django.request:Not Found: /features/img5.png
+WARNING:django.request:Not Found: /features/img7.png
+WARNING:django.request:Not Found: /features/logo.png
+WARNING:django.request:Not Found: /about/logo.png
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/logo.png
+WARNING:django.request:Not Found: /form/logo.png
+WARNING:django.request:Not Found: /features/img1_.png
+WARNING:django.request:Not Found: /features/logo.png
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/img4.webp
+WARNING:django.request:Not Found: /features/img3.webp
+WARNING:django.request:Not Found: /features/img2_.png
+WARNING:django.request:Not Found: /features/img5.png
+WARNING:django.request:Not Found: /features/img7.png
+WARNING:django.request:Not Found: /features/img6.png
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\settings.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\settings.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/img1_.png
+WARNING:django.request:Not Found: /features/img2_.png
+WARNING:django.request:Not Found: /features/img3.webp
+WARNING:django.request:Not Found: /features/img5.png
+WARNING:django.request:Not Found: /features/img4.webp
+WARNING:django.request:Not Found: /features/img7.png
+WARNING:django.request:Not Found: /features/img6.png
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\MERN\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/signup.html
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /home/style.css
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 71, in get_feedback
+    res = model.generate_content(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 830, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource has been exhausted (e.g. check quota).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\views.py", line 32, in result_view
+    results, total_marks = process_answers(student_file_path, model_answers_file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 162, in process_answers
+    feedback = get_feedback(student_answer, model_answer, score)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 78, in get_feedback
+    raise Exception(f"Error generating feedback: {e}")
+Exception: Error generating feedback: 429 Resource has been exhausted (e.g. check quota).
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+ERROR:root:Error extracting keywords: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+]
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\views.py", line 32, in result_view
+    results, total_marks = process_answers(student_file_path, model_answers_file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 158, in process_answers
+    keywords = get_keywords(model_answer)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 44, in get_keywords
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 830, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.InvalidArgument: 400 API key expired. Please renew the API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+]
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py changed, reloading.
+WARNING:django.request:Not Found: /home/style.css
+WARNING:django.request:Not Found: /home/script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /about/style.css
+ERROR:django.request:Internal Server Error: /analysis/
+Traceback (most recent call last):
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 71, in get_feedback
+    res = model.generate_content(prompt)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 830, in generate_content
+    response = rpc(
+               ^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\retry\retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\timeout.py", line 120, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\AppData\Roaming\Python\Python312\site-packages\google\api_core\grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 Resource has been exhausted (e.g. check quota).
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\views.py", line 32, in result_view
+    results, total_marks = process_answers(student_file_path, model_answers_file_path)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 162, in process_answers
+    feedback = get_feedback(student_answer, model_answer, score)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\sanke\OneDrive\Desktop\DT\Analyser\myapp\backend.py", line 78, in get_feedback
+    raise Exception(f"Error generating feedback: {e}")
+Exception: Error generating feedback: 429 Resource has been exhausted (e.g. check quota).
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:C:\Users\sanke\OneDrive\Desktop\DT\Analyser\Analyser\urls.py changed, reloading.
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /style.css
+WARNING:django.request:Not Found: /script.js
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /about/style.css
+WARNING:django.request:Not Found: /features/style.css
+WARNING:django.request:Not Found: /features/path/to/your/hero-image.jpg

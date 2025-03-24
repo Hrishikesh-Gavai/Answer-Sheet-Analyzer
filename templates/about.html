@@ -1,0 +1,410 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/png"> 
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            font-family: "Afacad Flux", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff; /* Default text color */
+        }
+.background-radial-gradient {
+    background-color: hsl(218, 41%, 15%);
+    background-image: radial-gradient(650px circle at 0% 0%,
+        hsl(218, 41%, 35%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%),
+    radial-gradient(1250px circle at 100% 100%,
+        hsl(218, 41%, 45%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding-bottom: 50px;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-left img {
+    width: 80px;
+    height: auto;
+}
+
+.navbar-center {
+    text-align: center;
+}
+
+.headline {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #03dac5;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #03dac5;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    color: hsl(0, 0%, 85%);
+    margin-bottom: 30px; /* Added spacing below hero paragraph */
+}
+
+.vision, .mission, .history, .values, .team, .contact, .achievements, .partnerships {
+    margin-top: 50px;
+    text-align: left;
+}
+
+.vision p, .mission p, .history p, .values ul, .achievements ul, .partnerships ul, .team p, .contact p {
+    margin-bottom: 20px; /* Added spacing between paragraphs */
+}
+
+.mission h2, .vision h2, .history h2, .values h2, .achievements h2, .partnerships h2, .team h2, .contact h2 {
+    color: #03dac5;
+    font-size: 2em;
+    border-bottom: 2px solid #03dac5;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values ul li {
+    padding: 10px 0;
+    font-size: 1.1em;
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px; /* Add spacing above the team members section */
+}
+
+.team-member {
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    margin: 20px auto; /* Center the card */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px); /* Hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Make the image circular */
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.team h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensure cards wrap when the screen is smaller */
+    gap: 20px; /* Add space between cards */
+}
+
+.team-member {
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px); /* Makes 3 cards fit in one row, with space */
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.team-member h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: #777;
+}
+
+
+.team-member p {
+    font-size: 16px;
+    color: #777;
+}
+
+.team-member p:last-child {
+    font-size: 14px;
+    color: #666;
+}
+
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.contact ul li a {
+    color: #03dac5;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.contact ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px; /* Added spacing above the footer */
+}
+
+.footer p {
+    color: white;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .team-members {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="background-radial-gradient">
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img src="{% static 'logo.png' %}" alt="Logo" class="logo-img">
+            </div>
+            <div class="navbar-center">
+                <div class="headline">GradeGuru: Ultimate Answer Sheet Analyzer</div>
+            </div>
+            <ul class="nav-links navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/form">Analyzer</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section class="about">
+            <div class="hero">
+                <h1>About Us</h1>
+                <p>We are dedicated to providing innovative solutions that empower our users.</p>
+            </div>
+
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>Our vision for the AI-based answer sheet analyzer is to revolutionize the educational assessment process by leveraging cutting-edge technology to simplify and streamline grading. We are committed to creating a system that accelerates evaluation with unmatched accuracy, freeing educators from the burden of manual assessment so they can focus on nurturing student growth. Our goal is to promote fair and objective evaluation, ensuring that every student is assessed consistently based on their merit, eliminating human biases, and bringing transparency to the grading process.
+                <br><br>Beyond just grading, we aim to enhance learning by providing insightful feedback that helps students identify areas for improvement, empowering them to grow and excel. This system will not only help educators save time but also give them AI-driven tools to manage assessments efficiently, allowing for more meaningful interactions with students. We envision this project as a contribution to the broader innovation in education, where AI transforms how knowledge is evaluated, making the process faster, fairer, and more insightful for both students and teachers.</p>
+            </div>
+
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>Our mission is to transform the traditional assessment process by harnessing the power of artificial intelligence to deliver a faster, more accurate, and efficient answer sheet evaluation system. We aim to reduce the time and effort involved in grading, allowing educators to focus on fostering student growth and providing personalized feedback. By automating the evaluation process, we strive to eliminate inconsistencies and human errors, ensuring a fair and unbiased assessment for every student.
+                    <br><br>Through this AI-driven solution, we are dedicated to enhancing the overall educational experience by not only simplifying the grading process but also offering valuable insights into student performance. Our mission is to support educators and institutions in creating a more transparent, objective, and data-driven approach to learning, ultimately contributing to the advancement of education through technology.
+                </p>
+            </div>
+
+            <div class="history">
+                <h2>Our History</h2>
+                <p>
+                    OWe started with a collaborative and innovative approach we developed while studying Design Thinking as part of our curriculum. This subject played a crucial role in shaping the way we approached problem-solving, particularly in understanding the needs of educators and students through stakeholder interactions. By engaging directly with teachers, students, and academic administrators, we gained a deep insight into the challenges faced in traditional grading systems.
+                    <br><br>The principles of Design Thinking guided us in creating an AI-based answer sheet analyzer that addresses these pain points effectively. Through iterative design, empathy-driven solutions, and constant feedback from stakeholders, we crafted a system that not only streamlines the grading process but also enhances its fairness and efficiency. Our project stands as a testament to the power of Design Thinking in driving meaningful innovation in education.
+                </p>
+            </div>
+
+            <div class="values">
+                <h2>Our Values</h2>
+                <ul>
+                    <li><strong>Innovation</strong>: We thrive on creativity and push for new ideas.</li>
+                    <li><strong>Integrity</strong>: We maintain transparency and honesty in our operations.</li>
+                    <li><strong>Collaboration</strong>: We believe in the power of teamwork and community.</li>
+                    <li><strong>Customer-Centric</strong>: Our users are at the heart of everything we do.</li>
+                </ul>
+            </div>
+
+            <div class="achievements">
+                <h2>Our Achievements</h2>
+                <p>Over the years, we have been recognized for our commitment to innovation in education technology. Some of our key accomplishments include:</p>
+                <ul>
+                    <li>Launching the first AI-powered answer sheet analyzer in 2022.</li>
+                    <li>Awarded "Best Educational Tool" at the EdTech Global Awards 2023.</li>
+                    <li>Partnering with over 500 educational institutions worldwide.</li>
+                </ul>
+            </div>
+
+            <div class="partnerships">
+                <h2>Our Partnerships</h2>
+                <p>We collaborate with a range of organizations to ensure our solutions have a wide-reaching impact. Our key partners include:</p>
+                <ul>
+                    <li>OpenAI - leveraging AI models to improve our analysis technology.</li>
+                    <li>Google for Education - providing our tools to educators worldwide.</li>
+                    <li>UNESCO - working together on initiatives to improve global education.</li>
+                </ul>
+            </div>
+
+            <div class="team">
+                <h2>Meet Our Team</h2>
+                <div class="team-members">
+                    <div class="team-member">
+                        <h3>sanket K. Belekar</h3>
+                        <p>Developer</p>
+                        <img src="{% static '/images/Sanket.jpg' %}">
+                    </div>
+                    <div class="team-member">
+                        <h3>Hrishikesh Gavai</h3>
+                        <p>Associate Team Member</p>
+                        <img src="{% static '/images/Hrishikesh.jpg' %}" alt="Jane Smith">
+                    </div>
+                    <div class="team-member">
+                        <h3>Yash Gatkal</h3>
+                        <p>Associate Team Member</p>
+                        <img src="{% static '/images/Yash.png' %}" alt="Emily Johnson">
+                    </div>
+                    <div class="team-member">
+                        <h3>Mitali Diwate</h3>
+                        <p>Associate Team Member</p>
+                        <img src="{% static '/images/Mitali.png' %}" alt="Emily Johnson">
+                    </div>
+                    <div class="team-member">
+                        <h3>Apurva Deokar</h3>
+                        <p>Associate Team Member</p>
+                        <img src="{% static '/images/Apurva.jpg' %}" alt="Emily Johnson">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, feel free to <a href="contact.html">reach out</a>! You can also follow us on our social media channels:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 GradeGuru. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

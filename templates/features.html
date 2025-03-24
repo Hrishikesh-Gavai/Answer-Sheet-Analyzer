@@ -1,0 +1,311 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/png"> 
+    <title>Features | Your Website</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Body and Font Styling */
+body {
+  font-family: "Afacad Flux", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Increase font size */
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-center {
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #03dac5;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-center {
+    margin-top: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-links li {
+    margin: 5px 0;
+  }
+}
+
+/* Hero Section Styling */
+.hero {
+  background-image: url("path/to/your/hero-image.jpg"); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* Features Section Styling */
+.features {
+  padding: 40px 20px;
+  color: #333; /* Darker color for better contrast on the gradient */
+}
+
+.features h2 {
+  font-size: 2.5em;
+  color: #000; /* Black for heading */
+  text-align: center; /* Centered */
+  margin-bottom: 30px;
+}
+
+.feature-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px; /* Adjust width as needed */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center; /* Center card content */
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Move up on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px; /* Add spacing below image */
+}
+
+.card h3 {
+  font-size: 1.8em;
+  margin: 0; /* Remove top margin */
+  color: #f0f0f0; /* Light color for headings */
+}
+
+.card p {
+  font-size: 1.2em; /* Increase font size */
+  line-height: 1.5;
+  color: #f0f0f0; /* Light text color */
+}
+
+/* Call to Action Section Styling */
+.cta {
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 40px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.8em; /* Increase font size */
+  color: #fff; /* White for contrast */
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.3em; /* Increase font size */
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+.button-29 {
+  background-color: #03dac5;
+  color: #000;
+  padding: 15px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-29:hover {
+  background-color: #000;
+  color: #03dac5;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #222; /* Dark background */
+  padding: 20px;
+  text-align: center;
+  color: #fff; /* White text */
+}
+
+.footer p {
+  font-size: 1.2em;
+}
+
+/* Background Gradient */
+.background-radial-gradient {
+    background-color: hsl(218, 41%, 15%);
+    background-image: radial-gradient(650px circle at 0% 0%,
+        hsl(218, 41%, 35%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%),
+    radial-gradient(1250px circle at 100% 100%,
+        hsl(218, 41%, 45%) 15%,
+        hsl(218, 41%, 30%) 35%,
+        hsl(218, 41%, 20%) 75%,
+        hsl(218, 41%, 19%) 80%,
+        transparent 100%);
+}
+
+    </style>
+</head>
+<body class="background-radial-gradient">
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <img src="{% static 'logo.png' %}" alt="Logo" class="logo-img">
+        </div>
+        <div class="navbar-center">
+            <div class="headline">GradeGuru: Ultimate Answer Sheet Analyzer</div>
+        </div>
+        <ul class="nav-links navbar-right">
+            <li><a href="/">Home</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/form">Analyser</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Our Amazing Features</h1>
+            <p>Discover what makes our service unique and beneficial for you.</p>
+        </div>
+    </div>
+
+    <section class="features">
+        <h2 style="color: aqua;">Key Features</h2>
+        <div class="feature-cards">
+            <div class="card">
+                <h3>Multilingual Support</h3>
+                <img src="{% static 'images/img1_.png' %}" alt="Feature One Image">
+                <p>Our analyzer supports multiple languages, allowing it to recognize and grade handwritten answers in various languages, providing flexibility for diverse classrooms.</p>
+            </div>
+            <div class="card">
+                <h3>AI-Based Answer Recognition</h3>
+                <img src="{% static 'images/img2_.png' %}" alt="AI Recognition">
+                <p>Utilizes cutting-edge AI to recognize and evaluate handwritten answers, ensuring accurate and efficient grading.</p>
+            </div>
+            <div class="card">
+                <h3>Keyword Matching</h3>
+                <img src="{% static 'images/img3.webp' %}" alt="Keyword Matching">
+                <p>Automatically checks for specific keywords in answers, rewarding students for including key concepts and terms.</p>
+            </div>
+            <div class="card">
+                <h3>Customizable Marking Schemes</h3>
+                <img src="{% static 'images/img4.webp' %}" alt="Marking Scheme">
+                <p>Tailor the grading process to different subjects with customizable weightage and marking schemes.</p>
+            </div>
+            <div class="card">
+                <h3>Answer Length Analysis</h3>
+                <img src="{% static 'images/img5.png' %}" alt="Answer Length">
+                <p>Evaluate the completeness of answers based on length and content, providing feedback on conciseness and relevance.</p>
+            </div>
+            <div class="card">
+                <h3>PDF to Image Conversion</h3>
+                <img src="{% static 'images/img6.png' %}" alt="PDF Conversion">
+                <p>Seamlessly converts answer sheet PDFs into images for accurate analysis and grading through AI.</p>
+            </div>
+            <div class="card">
+                <h3>Detailed Analytics</h3>
+                <img src="{% static 'images/img7.png' %}" alt="Analytics">
+                <p>Provides in-depth performance analytics for students, allowing educators to track progress over time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Experience It?</h2>
+        <p>Join us today and explore all our incredible features that can benefit you.</p>
+        <a href="/form" class="button-29">Get Started</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

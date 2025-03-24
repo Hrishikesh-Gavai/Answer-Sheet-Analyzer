@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <title>Answer Sheet Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="{% static 'logo.png' %}" type="image/png"> 
+    <style>
+        /* General Page Styling */
+        body {
+            font-family: "Afacad Flux", sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff; /* Default text color */
+            background-color: hsl(218, 41%, 15%); /* Fallback color */
+            background-image: radial-gradient(650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%),
+                              radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+        }
+    
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+    
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+    
+        .navbar-left img {
+            width: 80px;
+            height: auto;
+        }
+    
+        .navbar-center .headline {
+            font-size: 2em; /* Increased headline font size */
+            font-weight: bold;
+            color: #03dac5; /* Accent color for headlines */
+            text-align: center;
+        }
+    
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding-left: 0;
+        }
+    
+        .nav-links li a {
+            color: #ffffff; /* Navbar links color */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+            font-size: 1.1em; /* Increased link font size */
+        }
+    
+        .nav-links li a:hover {
+            color: #03dac5; /* Highlight color on hover */
+        }
+    
+        /* Call to Action Section */
+        .cta {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+    
+        .cta h2 {
+            font-size: 2.5em; /* Increased font size */
+            margin-bottom: 20px;
+            color: #03dac5; /* Accent color */
+        }
+    
+        .cta p {
+            font-size: 1.5em; /* Increased paragraph font size */
+            color: hsl(0, 0%, 85%);
+            margin-bottom: 30px;
+        }
+    
+        .cta .btn-primary {
+            background-color: #03dac5; /* Button color */
+            border-color: #03dac5;
+            font-size: 1.5em; /* Increased button font size */
+            transition: background-color 0.3s, border-color 0.3s;
+            padding: 10px 20px; /* Added padding for larger buttons */
+        }
+    
+        .cta .btn-primary:hover {
+            background-color: #02b4a1; /* Darker shade on hover */
+            border-color: #02b4a1;
+        }
+    
+        /* Form Section */
+        h2.text-center {
+            margin-top: 40px;
+            font-size: 2.2em; /* Increased heading font size */
+            color: #03dac5; /* Heading color */
+        }
+    
+        p.text-center.lead {
+            color: hsl(0, 0%, 85%);
+            margin-bottom: 40px;
+            font-size: 1.3em; /* Increased lead paragraph font size */
+        }
+    
+        .form-label {
+            font-size: 1.3em; /* Increased label font size */
+            color: #e0e0e0; /* Lighter label color */
+        }
+    
+        input.form-control {
+            background-color: hsl(218, 41%, 30%); /* Input background color */
+            color: #ffffff; /* Input text color */
+            border-radius: 5px;
+            padding: 12px; /* Increased padding for larger inputs */
+            font-size: 1.2em; /* Increased input text size */
+            border: 1px solid #03dac5; /* Input border color */
+        }
+    
+        input.form-control:focus {
+            border-color: #03dac5; /* Focus border color */
+            box-shadow: 0 0 5px rgba(3, 218, 197, 0.5); /* Focus shadow */
+        }
+    
+        .form-text {
+            font-size: 1em; /* Increased hint text size */
+            color: #cccccc; /* Hint text color */
+        }
+    
+        button.btn-primary {
+            background-color: #0056b3; /* Button background */
+            border-color: #0056b3; /* Button border */
+            font-size: 1.5em; /* Increased button font size */
+            padding: 12px 20px; /* Increased padding for larger buttons */
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+    
+        button.btn-primary:hover {
+            background-color: #00408f; /* Darker shade on hover */
+            border-color: #00408f; /* Darker border on hover */
+        }
+    
+        /* Footer Styling */
+        footer {
+            background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent footer */
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        }
+    
+        footer p {
+            color: #ffffff; /* Footer text color */
+            font-size: 1.2em; /* Increased footer text size */
+            margin: 0;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+    
+            .nav-links {
+                flex-direction: column;
+            }
+    
+            .navbar-left img {
+                width: 60px;
+            }
+    
+            .cta h2 {
+                font-size: 2em;
+            }
+    
+            .cta p {
+                font-size: 1.2em;
+            }
+    
+            h2.text-center {
+                font-size: 1.8em;
+            }
+    
+            p.text-center.lead {
+                font-size: 1.1em;
+            }
+        }
+    
+    </style>
+</head>
+
+<body class="background-radial-gradient">
+    <header>
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img src="{% static 'logo.png' %}" alt="Logo" class="logo-img">
+            </div>
+            <div class="navbar-center">
+                <div class="headline">GradeGuru: Ultimate Answer Sheet Analyzer</div>
+            </div>
+            <ul class="nav-links navbar-right">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/form">Analyser</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container mt-5">
+        <section class="cta">
+            <h2 style="color: #03dac5;">Start Analyzing Now!</h2>
+            <p style="color: #03dac5;">Ready to take your grading process to the next level? Upload your answer sheets and let our AI do the work for you!</p>
+            <a href="/form" class="btn btn-primary">Get Started</a>
+        </section>
+        
+        <h2 class="text-center" style="color: #0056b3;" >Analyze Answer Sheets</h2>
+        <p class="text-center lead" style="color: #0056b3;" >Our AI-powered tool allows educators to upload student answer sheets and model
+            answers to generate comprehensive grading reports. Get started by uploading the required files below.</p>
+
+        <!-- Updated form action to include trailing slash -->
+        <form action="/analysis/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <!-- Form fields -->
+            <div class="mb-3">
+                <label for="file" style="color: #0056b3;" class="form-label">Upload Student's Answer Sheet (PDF)</label>
+                <input type="file" class="form-control" id="file" name="file" accept=".pdf" required>
+                <small class="form-text text-muted">Make sure the PDF contains clear text and is not password-protected.</small>
+            </div>
+            <div class="mb-3">
+                <label for="model_answers" style="color: #0056b3;" class="form-label">Upload Model Answer Sheet (PDF)</label>
+                <input type="file" class="form-control" id="file" name="model_answers" accept=".pdf" required>
+                <small class="form-text text-muted">The model answer sheet should contain the correct answers for comparison.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>         
+    </div>
+    
+    <footer class="text-center">
+        <div class="container" style="color: black; font-size: 1.5rem;">
+            <p>&copy; 2024 AI Answer Sheet Analyzer. All rights reserved.</p>
+        </div>
+    </footer>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</body>
+
+</html>
