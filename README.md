@@ -13,7 +13,7 @@ Students, on the other hand, face delays in getting feedback. Often, valuable in
 # *💡 Our Solution:*
 Answer Sheet Analyzer is a smart, human-centric platform that transforms the traditional assessment process using AI-powered analysis, intuitive interfaces, and educator-friendly tools.
 
-✅ What It Does:
+What It Does:
 
     Scan & Upload: Just snap or upload scanned answer sheets.
 
@@ -23,7 +23,7 @@ Answer Sheet Analyzer is a smart, human-centric platform that transforms the tra
 
     Teacher-Friendly UI: Educators can override scores, give custom comments, and track class-wide trends effortlessly.
 
-🔍 Why It Matters:
+Why It Matters:
 
     Saves Time: Cut down hours of grading into minutes.
 
@@ -35,7 +35,7 @@ Answer Sheet Analyzer is a smart, human-centric platform that transforms the tra
 
     Less Stress, More Impact: Teachers can focus on teaching, not tallying.
 
-🛠 Built With:
+Built With:
 
     Python / OpenCV – For image processing & OCR.
 
@@ -43,7 +43,7 @@ Answer Sheet Analyzer is a smart, human-centric platform that transforms the tra
 
     Design Thinking – To center the experience around teachers & students, not just tech.
 
-🌟 Design Thinking at the Core:
+Design Thinking at the Core:
 
     Empathize – Spoke to teachers & students to understand their frustrations.
 
@@ -56,17 +56,16 @@ Answer Sheet Analyzer is a smart, human-centric platform that transforms the tra
     Test & Iterate – Refined features based on real feedback.
 
 
-# *📣 The Bigger Picture:*
-
-We’re not just scanning sheets — we’re reshaping learning assessment. It’s about empathy, empowerment, and effectiveness.
-Because grading should reflect learning, not just workload.
-
-# * 📝 Credits*
+# *📝 Credits*
 
 Hrishikesh Gavai
+
 Sanket Belekar
+
 Yash Gatkal
+
 Mitali Diwate
+
 Apurva Deokar
 
 SY-BTech Computer Engineering, K.K.W.I.E.E.R.
